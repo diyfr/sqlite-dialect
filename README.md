@@ -7,7 +7,7 @@ It's an adaptation of Gwen SqliteDialect(https://github.com/gwenn/sqlite-dialect
 ##Springboot
 For version 1.4.0-RELEASE  
 Add JPA Dependency to pom file and Sqlite JDBC  
-```
+```xml
        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -21,7 +21,7 @@ Add JPA Dependency to pom file and Sqlite JDBC
 ```
 
 Declare DataSource (Update Path and FileName here is nameOfFile.db )  
-```
+```java
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;  
 import org.springframework.context.annotation.Bean;  
 import org.springframework.context.annotation.Configuration;  
@@ -41,7 +41,7 @@ public class DatabaseConfig {
 }
 ```
 Edit application.properties and add jpa parameters:  
-```
+```properties
 spring.jpa.database-platform=org.hibernate.dialect.SQLiteDialect  
 spring.jpa.hibernate.ddl-auto=create-drop  
 ```
